@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Běh Javořími horami</title>
+  <link rel="icon" href="img/logo_2.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .wrapper {
+      flex: 1;
+    }
+
+	.logo {
+      display: block;
+      margin: 0 auto;         /* zarovná na střed */
+      width: 335px;           /* nastav dle potřeby – přizpůsob délce názvu */
+      height: auto;
+	  margin-top: 9px
+    }
+
+    header {
+      padding: 4px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    header h1 {
+      color: #8B5E3C;
+	  margin-top: 4px; /* ⬅ tím odstraníš zbytečnou horní mezeru u nadpisu */
+	  margin-bottom: 5px
+    }
+
+    header p {
+      font-size: 17px;
+	  margin-top: 5px
+    }
+
+    .nav-container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background-color: #fdfdfd;
+      border-top: 1px solid #ddd;
+	 border-left: 1px solid #ddd;
+	  border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    nav li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 12px;
+      position: relative;
+    }
+
+    nav li a::after {
+      content: '';
+      position: absolute;
+      left: 30%;
+      bottom: 0;
+      width: 40%;
+      height: 2px;
+      background-color: #8B5E3C;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    nav li a:hover {
+      color: #000;
+    }
+
+    nav li a:hover::after {
+      opacity: 1;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+	
+	main a {
+      color: #8B5E3C;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease-in-out;
+    }
+
+    main a:hover {
+      border-bottom: 1px solid #8B5E3C;
+      color: #5a3d28; /* trochu tmavší hnědá pro efekt */
+    }
+	
+	main img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    figure {
+      margin: 20px 0;
+      text-align: center;
+    }
+	
+	.btn-outline {
+  display: inline-block;
+  background-color: white;
+  color: #8B5E3C; /* hnědá */
+  padding: 14px 28px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #8B5E3C;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #8B5E3C;
+  color: white;
+}
+
+.btn-center {
+  text-align: center;
+  margin: 30px 0;
+}
+
+
+    footer {
+      background-color: #f2f2f2;
+      padding: 4px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+	  <!-- SVG logo -->
+      <img src="img/profil.svg" alt="Logo" class="logo">
+      <h1>Běh Javořími horami</h1>
+      <p>9. srpna 2025 | 16,5 km / 850 m převýšení</p>
+    </header>
+
+    <div class="nav-container">
+      <nav>
+        <ul>
+          <li><a href="index.html">O běhu</a></li>
+          <li><a href="trasa.html">Trasa</a></li>
+          <li><a href="propozice.html">Propozice</a></li>
+          <li><a href="registrace.html">Registrace</a></li>
+          <li><a href="vysledky.html">Výsledky</a></li>
+          <li><a href="#">Fotky</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <section>
+        <h2>Registrace</h2>
+        <p><strong>Přihlášky:</strong> otevřené do 30. 7. Na místě bude přihlášení možné pouze za zvýšené startovné.</p>
+		<p><strong>Startovné:</strong> 150 Kč, platba pouze na místě (přihlášení v den závodu 200 Kč).</p>
+      </section>
+	  
+	  <div class="btn-center">
+  <a href="https://www.google-forms" class="btn-outline">Přihlásit se</a>
+</div>
+
+	
+
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Běh Javořími horami</p>
+  </footer>
+</body>
+</html>
