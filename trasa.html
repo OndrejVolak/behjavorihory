@@ -157,16 +157,45 @@
       text-align: center;
       font-size: 0.9em;
     }
+	  
+/* Úpravy pro mobily */
+   @media (max-width: 600px) {
+  .header-inner {
+    padding: 0 16px;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 280px; /* menší velikost loga na mobilu */
+  }
+
+  header h1 {
+    font-size: 1.4em;
+    margin-top: 8px;
+  }
+
+  header p {
+    font-size: 0.95em;
+  }
+
+  .nav-container {
+    margin: 0 auto;
+    padding: 0 16px;
+}
+  }
+
   </style>
 </head>
 
 <body>
   <div class="wrapper">
     <header>
+      <div class="header-inner">
 	  <!-- SVG logo -->
       <img src="img/profil.svg" alt="Logo" class="logo">
       <h1>Běh Javořími horami</h1>
       <p>9. srpna 2025 | 16,5 km / 850 m převýšení</p>
+      </div>
     </header>
 
     <div class="nav-container">
