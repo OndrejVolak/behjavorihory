@@ -204,11 +204,6 @@ nav li a.active::after {
     font-size: 0.95em;
   }
 
-  .nav-container {
-    margin: 0 auto;
-    padding: 0 16px;
-  }
-
   nav ul {
     display: flex;
     flex-wrap: wrap;               /* ZALOMENÍ položek na více řádků */
@@ -221,6 +216,42 @@ nav li a.active::after {
     font-size: 1rem;
     padding: 8px 14px;
     white-space: nowrap;
+  }
+
+  .nav-container {
+    max-width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .menu-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+  }
+
+  .menu-group li {
+    list-style: none;
+  }
+
+  .menu-group li a {
+    font-size: 1rem;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+    font-weight: 600;
   }
 }
 
