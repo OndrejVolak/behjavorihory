@@ -262,8 +262,15 @@ nav li a.active::after {
     right: 0;
     background: linear-gradient(to left, #fff, transparent);
   }
-}
 
+  <script>
+  window.addEventListener("load", () => {
+    const menu = document.querySelector("nav ul");
+    if (menu && window.innerWidth <= 600) {
+      menu.scrollLeft = 20; // malý pohyb doprava
+    }
+  });
+</script>
    }
 
   </style>
