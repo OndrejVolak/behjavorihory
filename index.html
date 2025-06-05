@@ -200,7 +200,29 @@ nav li a.active::after {
   .nav-container {
     margin: 0 auto;
     padding: 0 16px;
+    overflow-x: auto;                /* umožní posouvání menu*/
 }
+	   
+    nav ul {
+    flex-wrap: nowrap;              /* nezalamuj položky pod sebe */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    gap: 0.5rem;
+    justify-content: flex-start;    /* začni zleva (necentrovat) */
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+
+    nav ul::-webkit-scrollbar {
+    display: none;
+  }
+
+     nav li a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
   }
 
   </style>
