@@ -177,7 +177,8 @@ nav li a.active::after {
       font-size: 0.9em;
     }
 	  
-   /* Úpravy pro mobily */
+
+/* Úpravy pro mobily */
 @media (max-width: 600px) {
   .header-inner {
     padding: 0 16px;
@@ -206,72 +207,23 @@ nav li a.active::after {
   .nav-container {
     margin: 0 auto;
     padding: 0 16px;
-    overflow-x: auto;
-    position: relative;
   }
 
   nav ul {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-    gap: 0.5rem;                   /* větší mezery */
+    flex-wrap: wrap;               /* ZALOMENÍ položek na více řádků */
+    justify-content: center;       /* vystředění odkazů */
+    gap: 0.6rem 1rem;              /* mezery mezi řádky i sloupci */
     padding: 10px 0;
-    scrollbar-width: thin;        /* tenčí scrollbar ve Firefoxu */
-    scrollbar-color: #ccc transparent; /* barva scrollbar dráhy a pozadí */
-  }
-
-  nav ul::-webkit-scrollbar {
-    height: 6px;                  /* výška scrollbar na mobilech */
-  }
-
-  nav ul::-webkit-scrollbar-thumb {
-    background: #bbb;             /* barva "táhla" */
-    border-radius: 4px;
-  }
-
-  nav ul::-webkit-scrollbar-track {
-    background: transparent;
   }
 
   nav li a {
-    font-size: 1rem;              /* větší text */
-    padding: 8px 14px;            /* větší klikací plocha */
+    font-size: 1rem;
+    padding: 8px 14px;
     white-space: nowrap;
   }
+}
 
-  .nav-container::before,
-  .nav-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 32px;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .nav-container::before {
-    left: 0;
-    background: linear-gradient(to right, #fff, transparent);
-  }
-
-  .nav-container::after {
-    right: 0;
-    background: linear-gradient(to left, #fff, transparent);
-  }
-
-  <script>
-  window.addEventListener("load", () => {
-    const menu = document.querySelector("nav ul");
-    if (menu && window.innerWidth <= 600) {
-      menu.scrollLeft = 20; // malý pohyb doprava
-    }
-  });
-</script>
-   }
 
   </style>
 </head>
