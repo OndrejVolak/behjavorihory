@@ -193,11 +193,11 @@ nav li a.active::after {
     margin-top: 8px;
   }
 
-    h2 {
-      font-size: 1.3rem;
-      color: #222;
-      font-weight: 620;
-    }
+  h2 {
+    font-size: 1.3rem;
+    color: #222;
+    font-weight: 620;
+  }
 
   header p {
     font-size: 0.95em;
@@ -206,51 +206,64 @@ nav li a.active::after {
   .nav-container {
     margin: 0 auto;
     padding: 0 16px;
-    overflow-x: auto;               /* umožní posouvání menu, když je potřeba */
-    position: relative;  
+    overflow-x: auto;
+    position: relative;
   }
 
   nav ul {
-    flex-wrap: nowrap;              /* nezalamuj položky pod sebe */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
-    gap: 0.5rem;
-    justify-content: flex-start;    /* začni zleva (necentrovat) */
-    padding-bottom: 8px;
-    scrollbar-width: none;
+    gap: 0.7rem;                   /* větší mezery */
+    padding: 10px 0;
+    scrollbar-width: thin;        /* tenčí scrollbar ve Firefoxu */
+    scrollbar-color: #ccc transparent; /* barva scrollbar dráhy a pozadí */
   }
 
   nav ul::-webkit-scrollbar {
-    display: none;
+    height: 6px;                  /* výška scrollbar na mobilech */
+  }
+
+  nav ul::-webkit-scrollbar-thumb {
+    background: #bbb;             /* barva "táhla" */
+    border-radius: 4px;
+  }
+
+  nav ul::-webkit-scrollbar-track {
+    background: transparent;
   }
 
   nav li a {
-    font-size: 0.9rem;
-    padding: 6px 10px;
+    font-size: 1rem;              /* větší text */
+    padding: 8px 14px;            /* větší klikací plocha */
     white-space: nowrap;
   }
 
-.nav-container::before,
-.nav-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 32px;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
+  .nav-container::before,
+  .nav-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 32px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .nav-container::before {
+    left: 0;
+    background: linear-gradient(to right, #fff, transparent);
+  }
+
+  .nav-container::after {
+    right: 0;
+    background: linear-gradient(to left, #fff, transparent);
+  }
 }
 
-.nav-container::before {
-  left: 0;
-  background: linear-gradient(to right, #fff, transparent);
-}
-
-.nav-container::after {
-  right: 0;
-  background: linear-gradient(to left, #fff, transparent);
-}
    }
 
   </style>
