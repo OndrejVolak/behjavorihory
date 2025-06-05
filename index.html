@@ -197,55 +197,24 @@ nav li a.active::after {
     font-size: 0.95em;
   }
 
-  .nav-container {
+   .nav-container {
     margin: 0 auto;
-    padding: 0 16px;
-    overflow-x: auto;  /* umožní posouvání menu*/
-    position: relative;  
-}
-
-  .nav-container::before,
-  .nav-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 32px;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.nav-container::before {
-  left: 0;
-  background: linear-gradient(to right, #fff, transparent);
-}
-
-.nav-container::after {
-  right: 0;
-  background: linear-gradient(to left, #fff, transparent);
-}
-	   
-    nav ul {
-    flex-wrap: nowrap;              /* nezalamuj položky pod sebe */
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-    gap: 0.5rem;
-    justify-content: flex-start;    /* začni zleva (necentrovat) */
-    padding-bottom: 8px;
-    scrollbar-width: none;
+    padding: 0 12px;
   }
 
-    nav ul::-webkit-scrollbar {
-    display: none;
+  nav ul {
+    flex-wrap: nowrap;           /* nepovolí zalomení */
+    justify-content: center;     /* položky zůstávají vycentrované */
+    gap: 0.4rem;                 /* menší mezery mezi odkazy */
+    padding: 8px 0;
   }
 
-     nav li a {
-    font-size: 0.9rem;
-    padding: 6px 10px;
-    white-space: nowrap;
+  nav li a {
+    font-size: 0.85rem;          /* zmenší velikost textu */
+    padding: 4px 6px;            /* menší prostor kolem odkazu */
+    white-space: nowrap;         /* zabrání přelomení textu */
   }
-  }
+   }
 
   </style>
 </head>
