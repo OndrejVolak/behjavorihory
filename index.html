@@ -180,76 +180,37 @@ nav li a.active::after {
 
 /* Úpravy pro mobily */
 @media (max-width: 600px) {
-  .header-inner {
-    padding: 0 16px;
-  }
-
-  .logo {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  header h1 {
-    font-size: 1.4em;
-    margin-top: 8px;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-    color: #222;
-    font-weight: 620;
-  }
-
-  header p {
-    font-size: 0.95em;
-  }
-
   .nav-container {
     max-width: 100%;
     margin: 0 auto;
     padding: 0 16px;
   }
 
-  nav {
-  display: flex;
-  flex-direction: column;
-}
-
-  .menu-top {
-  margin-bottom: 12px;
-}
-
-  .menu-group {
+  nav .menu {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;                  /* ✅ zalomení na více řádků */
     justify-content: center;
-    gap: 0.6rem 1rem;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    gap: 0.6rem 1rem;                 /* mezery mezi sloupci a řádky */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     background-color: #fdfdfd;
   }
 
-  .menu-group li {
+  .menu li {
     list-style: none;
   }
 
-  .menu-group li a {
+  .menu li a {
     font-size: 1rem;
     padding: 8px 14px;
     text-decoration: none;
     color: #000;
-    white-space: nowrap;
+    white-space: nowrap;             /* ✅ odkazy se nezalomí, ale přechází na nový řádek */
     font-weight: 600;
     border-radius: 6px;
-    transition: background-color 0.2s ease;
   }
-
-  .menu-group li a:hover {
-    background-color: #f0e9e2;
-  }
-}
-
+ }
 
 
   </style>
@@ -268,12 +229,10 @@ nav li a.active::after {
 
 <div class="nav-container">
   <nav>
-    <ul class="menu-group menu-top">
+    <ul>
       <li><a href="index.html">O běhu</a></li>
       <li><a href="trasa.html">Trasa</a></li>
       <li><a href="propozice.html">Propozice</a></li>
-    </ul>
-    <ul class="menu-group menu-bottom">
       <li><a href="registrace.html">Registrace</a></li>
       <li><a href="vysledky.html">Výsledky</a></li>
       <li><a href="#">Fotky</a></li>
