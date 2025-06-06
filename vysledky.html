@@ -191,6 +191,7 @@ nav li a.active::after {
       font-size: 0.9em;
     }
 
+
 /* Úpravy pro mobily */
 @media (max-width: 600px) {
   .header-inner {
@@ -231,20 +232,25 @@ nav li a.active::after {
     display: flex;
     flex-wrap: wrap;                  /* zalomení na více řádků */
     justify-content: center;
-    gap: 0.8rem 0.9rem;                 /* mezery mezi sloupci a řádky */
-    padding: 8px;
+    padding: 6px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #ffffff;
+    gap: 0;
   }
 
   .menu li {
+    flex: 0 0 31%;
+    box-sizing: border-box;
+    text-align: center;      /* zarovnání textu u odkazu */
     list-style: none;
+    padding-bottom: 3px;
   }
 
   .menu li a {
+    display: inline-block;
     font-size: 0.9rem;
-    padding: 8px 8px;
+    padding: 6px 6px;
     text-decoration: none;
     color: #222;
     white-space: nowrap;             /* odkazy se nezalomí, ale přechází na nový řádek */
