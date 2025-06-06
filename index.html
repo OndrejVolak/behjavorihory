@@ -223,7 +223,6 @@ nav li a.active::after {
     display: flex;
     flex-wrap: wrap;                  /* zalomení na více řádků */
     justify-content: center;
-    gap: 0.8rem 0.9rem;                 /* mezery mezi sloupci a řádky */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -231,9 +230,11 @@ nav li a.active::after {
   }
 
   .menu li {
-    width: 31%;         /* ✅ přesně 3 na řádek */
+    flex: 0 0 33%;
+    box-sizing: border-box;
     text-align: center;      /* zarovnání textu u odkazu */
     list-style: none;
+    padding-bottom: 8px;
   }
 
   .menu li a {
