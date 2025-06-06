@@ -143,15 +143,16 @@
       font-size: 0.9em;
     }
 	  
- /* Úpravy pro mobily */
-   @media (max-width: 600px) {
+
+	/* Úpravy pro mobily */
+@media (max-width: 600px) {
   .header-inner {
     padding: 0 16px;
   }
 
   .logo {
     width: 100%;
-    max-width: 280px; /* menší velikost loga na mobilu */
+    max-width: 280px;
   }
 
   header h1 {
@@ -159,15 +160,52 @@
     margin-top: 8px;
   }
 
+  h2 {
+    font-size: 1.3rem;
+    color: #222;
+    font-weight: 620;
+  }
+
   header p {
     font-size: 0.95em;
   }
 
+	
   .nav-container {
+    position: sticky;            
+    top: 0;
+    z-index: 1000;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 16px;
-}
   }
+
+  nav .menu {
+    display: flex;
+    flex-wrap: wrap;                  /* zalomení na více řádků */
+    justify-content: center;
+    gap: 0.8rem 0.9rem;                 /* mezery mezi sloupci a řádky */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffff;
+  }
+
+  .menu li {
+    list-style: none;
+  }
+
+  .menu li a {
+    font-size: 0.9rem;
+    padding: 8px 8px;
+    text-decoration: none;
+    color: #222;
+    white-space: nowrap;             /* odkazy se nezalomí, ale přechází na nový řádek */
+    font-weight: 510;
+    border-radius: 6px;
+  }
+ }
+	  
   </style>
 </head>
 
