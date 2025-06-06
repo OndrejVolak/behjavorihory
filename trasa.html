@@ -5,13 +5,14 @@
   <title>Běh Javořími horami</title>
   <link rel="icon" href="img/logo_2.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+
+<style>
     body {
       font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       color: #222;
-      background-color: #fff;
+      background-color: #ffff;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -20,7 +21,7 @@
     .wrapper {
       flex: 1;
     }
-
+	
 	.logo {
       display: block;
       margin: 0 auto;         /* zarovná na střed */
@@ -32,13 +33,19 @@
     header {
       padding: 4px;
       text-align: center;
-      background: #ffffff;
+      background: #ffff;
     }
 
     header h1 {
       color: #8B5E3C;
 	  margin-top: 4px; /* ⬅ tím odstraníš zbytečnou horní mezeru u nadpisu */
 	  margin-bottom: 5px
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: #222;
+      font-weight: 640;
     }
 
     header p {
@@ -52,12 +59,12 @@
     }
 
     nav {
-      background-color: #fdfdfd;
-      border-top: 1px solid #ddd;
-	  border-left: 1px solid #ddd;
-	  border-right: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-    }
+  background-color: #ffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);  
+  margin: 0 auto;
+}
 
     nav ul {
       list-style-type: none;
@@ -70,19 +77,23 @@
     }
 
     nav li a {
-      color: #000;
+      color: #222;
       text-decoration: none;
       font-weight: 600;
+      font-size: 1rem;
       padding: 6px 12px;
+      border-radius: 8px;
       position: relative;
+      transition: all 0.3s ease;
     }
 
     nav li a::after {
       content: '';
       position: absolute;
-      left: 30%;
+      left: 50%;
       bottom: 0;
-      width: 40%;
+      transform: translateX(-50%); 
+      width: 22px;
       height: 2px;
       background-color: #8B5E3C;
       opacity: 0;
@@ -90,12 +101,21 @@
     }
 
     nav li a:hover {
-      color: #000;
+      color: #222;
     }
 
     nav li a:hover::after {
       opacity: 1;
     }
+
+    /* Aktivní odkaz */
+    nav li a.active {
+    color: #8B5E3C;
+}
+
+nav li a.active::after {
+  opacity: 1;
+}
 
     main {
       max-width: 720px;
@@ -116,7 +136,7 @@
       color: #5a3d28; /* trochu tmavší hnědá pro efekt */
     }
 	
-		main img {
+	main img {
       max-width: 100%;
       height: auto;
       display: block;
@@ -127,6 +147,13 @@
       margin: 20px 0;
       text-align: center;
     }
+
+    .divider {
+      border-top: 1px solid #ddd;
+      background-color: #ddd;
+      margin: 20px 0;
+    }
+
 	
 	.btn-outline {
   display: inline-block;
@@ -236,7 +263,7 @@
 
     <div class="nav-container">
       <nav>
-        <ul>
+        <ul class="menu">
           <li><a href="index.html">O běhu</a></li>
           <li><a href="trasa.html">Trasa</a></li>
           <li><a href="propozice.html">Propozice</a></li>
