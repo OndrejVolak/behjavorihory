@@ -231,10 +231,13 @@ nav li a.active::after {
   }
 
   .menu li {
+    width: 33.3333%;         /* ✅ přesně 3 na řádek */
+    text-align: center;      /* zarovnání textu u odkazu */
     list-style: none;
   }
 
   .menu li a {
+    display: inline-block;
     font-size: 0.9rem;
     padding: 8px 8px;
     text-decoration: none;
