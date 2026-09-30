@@ -67,13 +67,17 @@ header h1 {
   margin-bottom: 5px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-weight: 900;
-  letter-spacing: 2px;
-  line-height: 1.05;
+  letter-spacing: 3px;
+  line-height: 0.95;
   text-transform: uppercase;
+
+  transform: rotate(-2deg) skew(-6deg);
   text-shadow:
-    2px 2px 0 #000,
-    -1px -1px 0 #000;
-  transform: skew(-3deg);
+    3px 2px 0 #000,
+    -2px -1px 0 #000,
+    5px 4px 0 #333;
+
+  -webkit-text-stroke: 1px #000;
 }
 
     h2 {
