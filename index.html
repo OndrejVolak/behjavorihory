@@ -204,6 +204,22 @@ figure img {
       font-size: 0.9em;
     }
 
+    .foto-text {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.foto-popis {
+  flex: 1;
+}
+
+.foto-text img {
+  width: 50%;
+  height: auto;
+  margin: 0;
+}
+
     /* Úpravy pro mobily */
     @media (max-width: 600px) {
 
@@ -332,17 +348,21 @@ figure img {
 
       <br>
       <h2>Javoří 2027 plán</h2>
-        <p style="text-align: justify;">
-          leden 2027     ... výběh po trase závodu a okolí č.1
-          květen 2027    ... výběh po trase závodu a okolí č.2
-          červenec 2027  ... závod <br>
-        </p>
 
-      <figure>
+      <div class="foto-text">
+  
+  <div class="foto-popis">
+    <p>
+      leden 2027 &nbsp;&nbsp; ... výběh po trase závodu a okolí č. 1<br>
+      květen 2027 &nbsp; ... výběh po trase závodu a okolí č. 2<br>
+      červenec 2027 ... závod
+    </p>
+  </div>
 
-        <img src="img/foto_2.jpg" alt="Start závodu">
+  <img src="img/foto_2.jpg" alt="Start závodu">
 
-      </figure>
+</div>
+
       <br>
 
 
