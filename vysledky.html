@@ -2,60 +2,86 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Běh Javořími horami</title>
+  <title>Běh Javořími horami – Výsledky</title>
   <link rel="icon" href="img/logo_2.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-
+  <style>
     html {
-    overflow-y: scroll;
+      overflow-y: scroll;
     }
-	
+
     body {
       font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      color: #222;
-      background-color: #ffffff;
+      color: #f2f2f2;
+      background-color: #000000;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     .wrapper {
       flex: 1;
     }
-	
-	.logo {
+
+    .logo {
       display: block;
-      margin: 0 auto;         /* zarovná na střed */
-      width: 335px;           /* nastav dle potřeby – přizpůsob délce názvu */
+      margin: 0 auto;
+      width: 355px;
       height: auto;
-	  margin-top: 9px
+      margin-top: 9px;
     }
 
     header {
       padding: 4px;
       text-align: center;
-      background: #ffffff;
+      background: #000000;
+    }
+
+    .logo-title {
+      display: inline-block;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-title:hover {
+      transform: scale(1.02);
     }
 
     header h1 {
       color: #8B5E3C;
-	  margin-top: 4px; /* ⬅ tím odstraníš zbytečnou horní mezeru u nadpisu */
-	  margin-bottom: 5px
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 33px;
+      font-weight: 750;
+      letter-spacing: 0.7px;
+      line-height: 1.15;
+      margin: 15px 0 10px;
     }
 
     h2 {
-      font-size: 1.4rem;
-      color: #222;
-      font-weight: 640;
+      color: #c8c8c8;
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.7px;
+      line-height: 1.7;
+    }
+
+    p {
+      color: #c8c8c8;
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.9px;
+      line-height: 1.7;
     }
 
     header p {
-      font-size: 17px;
-	  margin-top: 5px
+      font-size: 16px;
+      margin-top: 5px;
     }
 
     .nav-container {
@@ -64,12 +90,12 @@
     }
 
     nav {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);  
-  margin: 0 auto;
-}
+      background-color: #000000;
+      border-radius: 12px;
+      box-shadow: 0 2px 3px rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      margin: 0 auto;
+    }
 
     nav ul {
       list-style-type: none;
@@ -82,10 +108,12 @@
     }
 
     nav li a {
-      color: #222;
+      color: #c8c8c8;
+      font-family: "Trebuchet MS", sans-serif;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 15px;
+      letter-spacing: 0.7px;
       padding: 6px 12px;
       border-radius: 8px;
       position: relative;
@@ -97,38 +125,37 @@
       position: absolute;
       left: 50%;
       bottom: 0;
-      transform: translateX(-50%); 
+      transform: translateX(-50%);
       width: 22px;
-      height: 2px;
+      height: 3px;
       background-color: #8B5E3C;
       opacity: 0;
       transition: opacity 0.3s ease;
     }
 
     nav li a:hover {
-      color: #222;
+      color: #8B5E3C;
     }
 
     nav li a:hover::after {
       opacity: 1;
     }
 
-    /* Aktivní odkaz */
     nav li a.active {
-    color: #8B5E3C;
-}
+      color: #8B5E3C;
+    }
 
-nav li a.active::after {
-  opacity: 1;
-}
+    nav li a.active::after {
+      opacity: 1;
+    }
 
     main {
       max-width: 720px;
       margin: 20px auto;
       padding: 0 16px;
     }
-	
-	main a {
+
+    main a {
       color: #8B5E3C;
       font-weight: 600;
       text-decoration: none;
@@ -138,139 +165,121 @@ nav li a.active::after {
 
     main a:hover {
       border-bottom: 1px solid #8B5E3C;
-      color: #5a3d28; /* trochu tmavší hnědá pro efekt */
-    }
-	
-	main img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+      color: #b27a52;
     }
 
-    figure {
-      margin: 20px 0;
+    .btn-outline {
+      display: inline-block;
+      background-color: #000000;
+      color: #8B5E3C;
+      padding: 14px 40px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid #8B5E3C;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      background-color: #8B5E3C;
+      color: #f2f2f2;
+    }
+
+    .btn-center {
       text-align: center;
+      margin: 30px 0;
     }
-
-    .divider {
-      border-top: 1px solid #ddd;
-      background-color: #ddd;
-      margin: 20px 0;
-    }
-
-
-	.btn-outline {
-  display: inline-block;
-  background-color: white;
-  color: #8B5E3C; /* hnědá */
-  padding: 14px 40px;
-  font-size: 1.2em;
-  font-weight: bold;
-  text-decoration: none;
-  border: 2px solid #8B5E3C;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.btn-outline:hover {
-  background-color: #8B5E3C;
-  color: white;
-}
-
-.btn-center {
-  text-align: center;
-  margin: 30px 0;
-}
-
 
     footer {
-      background-color: #f2f2f2;
+      background-color: #8B5E3C;
       padding: 4px;
       text-align: center;
       font-size: 0.9em;
     }
 
+    footer p {
+      color: #f2f2f2;
+    }
 
-/* Úpravy pro mobily */
-@media (max-width: 600px) {
-  .header-inner {
-    padding: 0 16px;
-  }
+    /* Úpravy pro mobily */
+    @media (max-width: 600px) {
+      .header-inner {
+        padding: 0 16px;
+      }
 
-  .logo {
-    width: 100%;
-    max-width: 280px;
-  }
+      .logo {
+        width: 100%;
+        max-width: 280px;
+      }
 
-  header h1 {
-    font-size: 1.4em;
-    margin-top: 8px;
-  }
+      header h1 {
+        font-size: 1.6em;
+        margin-top: 8px;
+      }
 
-  h2 {
-    font-size: 1.3rem;
-    color: #222;
-    font-weight: 620;
-  }
+      h2 {
+        font-size: 1rem;
+      }
 
-  header p {
-    font-size: 0.95em;
-  }
+      header p {
+        font-size: 0.85em;
+      }
 
-	
-  .nav-container {
-    position: sticky;            
-    top: 0;
-    z-index: 1000;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 16px;
-  }
+      .nav-container {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
 
-  nav .menu {
-    display: flex;
-    flex-wrap: wrap;                  /* zalomení na více řádků */
-    justify-content: center;
-    padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #ffffff;
-    gap: 0;
-  }
+      nav .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 6px;
+        border: 1.2px solid #ccc;
+        border-radius: 10px;
+        background-color: #000000;
+        gap: 0;
+      }
 
-  .menu li {
-    flex: 0 0 31%;
-    box-sizing: border-box;
-    text-align: center;      /* zarovnání textu u odkazu */
-    list-style: none;
-    padding-bottom: 3px;
-  }
+      .menu li {
+        flex: 0 0 31%;
+        box-sizing: border-box;
+        text-align: center;
+        list-style: none;
+        padding-bottom: 3px;
+      }
 
-  .menu li a {
-    display: inline-block;
-    font-size: 0.9rem;
-    padding: 6px 6px;
-    text-decoration: none;
-    color: #222;
-    white-space: nowrap;             /* odkazy se nezalomí, ale přechází na nový řádek */
-    font-weight: 510;
-    border-radius: 6px;
-  }
- }
-
+      .menu li a {
+        display: inline-block;
+        font-size: 0.9rem;
+        padding: 6px 6px;
+        text-decoration: none;
+        color: #8B5E3C;
+        white-space: nowrap;
+        font-weight: 510;
+        border-radius: 6px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="wrapper">
     <header>
-	<div class="header-inner">
-	  <!-- SVG logo -->
-      <img src="img/profil.svg" alt="Logo" class="logo">
-      <h1>Běh Javořími horami</h1>
-      <p>2027 | 16,5 km / 850 m převýšení</p>
-	</div>
+      <div class="header-inner">
+        <img src="img/profil_black.svg" alt="Logo" class="logo">
+
+        <a href="index.html" class="logo-title">
+          <h1>Běh Javořími horami</h1>
+        </a>
+
+        <p>2027 | 16,5 km / 850 m převýšení</p>
+      </div>
     </header>
 
     <div class="nav-container">
@@ -280,7 +289,7 @@ nav li a.active::after {
           <li><a href="trasa.html">trasa</a></li>
           <li><a href="propozice.html">propozice</a></li>
           <li><a href="registrace.html">registrace</a></li>
-          <li><a href="vysledky.html">výsledky</a></li>
+          <li><a href="vysledky.html" class="active">výsledky</a></li>
           <li><a href="#">foto</a></li>
         </ul>
       </nav>
@@ -290,32 +299,41 @@ nav li a.active::after {
       <section>
         <h2>Výsledky</h2>
 
-	<div class="btn-center">
-      <a href="data\Vysledky_2025_.pdf" class="btn-outline" target="_blank">2025</a>
-    </div>
+        <div class="btn-center">
+          <a href="data/Vysledky_2025_.pdf"
+             class="btn-outline"
+             target="_blank"
+             rel="noopener noreferrer">2025</a>
+        </div>
 
-	<p><strong>Starší ročníky:</strong></p>
-    <div class="btn-center">
-      <a href="data\Vysledky_2019.pdf" class="btn-outline" target="_blank">2019</a>
-    </div>
+        <p><strong>Starší ročníky:</strong></p>
 
-    <div class="btn-center">
-      <a href="data\Vysledky_2018.pdf" class="btn-outline" target="_blank">2018</a>
-    </div>
+        <div class="btn-center">
+          <a href="data/Vysledky_2019.pdf"
+             class="btn-outline"
+             target="_blank"
+             rel="noopener noreferrer">2019</a>
+        </div>
 
-    <div class="btn-center">
-      <a href="data\Vysledky_2017.pdf" class="btn-outline" target="_blank">2017</a>
-    </div>
+        <div class="btn-center">
+          <a href="data/Vysledky_2018.pdf"
+             class="btn-outline"
+             target="_blank"
+             rel="noopener noreferrer">2018</a>
+        </div>
 
-	
-
+        <div class="btn-center">
+          <a href="data/Vysledky_2017.pdf"
+             class="btn-outline"
+             target="_blank"
+             rel="noopener noreferrer">2017</a>
+        </div>
+      </section>
     </main>
   </div>
 
   <footer>
-    <p>&copy; 2025 Běh Javořími horami</p>
+    <p>&copy; 2026 Běh Javořími horami</p>
   </footer>
 </body>
 </html>
-
-
